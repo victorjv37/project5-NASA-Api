@@ -1,8 +1,31 @@
+import { Routes,Route } from "react-router-dom"
+
+import { LoginPage } from "./pages/LoginPage"
+import { HomePage } from "./pages/HomePage"
+import { SignUpPage } from "./pages/SignUpPage"
+import { ProfilePage } from "./pages/ProfilePage"
+import { SettingsPage } from "./pages/SettingsPage"
+
+import { ProtectedLayout } from "./Components/ProtectedLayOut"
+import { HomeLayout } from "./Components/HomeLayout"
+
+import "./App.css"
 
 function App() {
   
   return (        
-      <h1>Vite + React</h1>
+      <Routes>
+        <Route element={<HomeLayout />}>
+          <Route path="/" element={<HomePage />}/>
+          <Route path="/login" element={<LoginPage />}/>
+          <Route path="/register" element={<SignUpPage />}/>
+        </Route>
+        
+        <Route path="/dashboard" element={<ProtectedLayout />}>
+          <Route path="/profile" element={<ProfilePage />}/>
+          <Route path="/settings" element={<SettingsPage />}/>
+        </Route>
+      </Routes>
   )
 }
 
