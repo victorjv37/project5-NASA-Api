@@ -95,3 +95,27 @@ form > button {
   position: static;
   margin-top: 2.5vh;
 }
+
+@media (max-width: 902px) {
+  button {
+    position: sticky;
+}
+p, h2 , h3 , h4 {
+  display: flex;
+  width: 34vh;
+}
+header {
+  top: 1vh;
+}
+span > h4 {
+  display: flex;
+  text-align: center;
+}
+#description {
+  width: 33vh;
+}
+div,img {
+  max-width: 42vh;
+  width: 44vh;
+}
+}

@@ -35,7 +35,10 @@ export const Apod = () => {
         <br />
         <input id="inputDate" type="date" onChange={handleDate} />
         <br />
-        <div>Choose a serious date, please...</div>
+        <div>{date}</div>
+        <br />
+        <div>We cant predice the future,</div>
+        <div>choose a serious date, please...</div>
       </>
     );
   }
