@@ -97,7 +97,11 @@ form > button {
 }
 
 @media (max-width: 902px) {
-  button {
+#inputDate {
+  background-color: #5b335c;
+  color: #fbf7fc;
+}
+button {
     position: sticky;
 }
 p, h2 , h3 , h4 {
