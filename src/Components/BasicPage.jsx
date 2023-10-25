@@ -1,8 +1,11 @@
-export const BasicPage = ({ title, description }) => {
+
+const BasicPage = ({title, description}) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{description}</p>
+    <div className="content">
+      <h2>{title}</h2>
+      <h4 id="description">{description}</h4>
     </div>
-  );
-};
+  )
+}
+
+export default BasicPage

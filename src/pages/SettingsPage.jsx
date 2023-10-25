@@ -1,9 +1,9 @@
-import { BasicPage } from "../components/BasicPage";
+import  BasicPage  from "../Components/BasicPage";
 export const SettingsPage = () => {
   return (
     <BasicPage
-      title="Setting Page"
-      description="Welcome to Settings - Protected Route"
+      title="Settings Page"
+      description="Welcome to Settings - Protected Route - WIP"
     />
   );
 };

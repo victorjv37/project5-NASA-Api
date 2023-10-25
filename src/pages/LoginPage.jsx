@@ -1,50 +1,65 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../hooks/useAuth";
 
 export const LoginPage = () => {
-  
   const { login } = useAuth();
   const [userLogin, setUserLogin] = useState("");
-  
+
   const handleInput = (ev) => {
     const { name, value } = ev.target;
     setUserLogin({ ...userLogin, [name]: value });
   };
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     login(userLogin);
   };
-  
+
   return (
     <div>
-      <h1>This is the Login Page</h1>
+      <h2 id="subtitle">CREATE YOUR API KEY</h2>
       <form onSubmit={handleSubmit} noValidate>
+        <label htmlFor="firstName">
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            required
+            placeholder="First Name*"
+            onChange={handleInput}
+          />
+        </label>
+        <label htmlFor="lastName">
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            required
+            placeholder="Last Name*"
+            onChange={handleInput}
+          />
+        </label>
         <label htmlFor="email">
           <input
             type="email"
             name="email"
             id="email"
             required
-            value={userLogin.name}
+            placeholder="Email*"
             onChange={handleInput}
           />
         </label>
-        <label htmlFor="password">
+        <label htmlFor="useApi">
           <input
-            type="password"
-            name="password"
-            id="password"
-            required
-            value={userLogin.name}
+            type="text"
+            name="useApi"
+            id="useApi"
+            placeholder="How will you use the APIs? (optional)"
             onChange={handleInput}
           />
         </label>
-        <button type="submit">Login In!</button>
+        <button type="submit">SignUp</button>
       </form>
-      <Link to="/register">{"Don't have an account? Sign Up"}</Link>
-      Protected Routes ReactJS 13
     </div>
   );
 };

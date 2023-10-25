@@ -10,7 +10,7 @@ export const AuthProvider = ({children}) => {
 
   const login = async (data) => {
     setUser(data)
-    navigate("private-route", { replace: true })
+    navigate("/dashboard/apod", { replace: true })
   }
 
   const logout = () => {

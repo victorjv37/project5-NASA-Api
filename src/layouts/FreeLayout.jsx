@@ -1,15 +1,15 @@
 import { Navigate, useOutlet } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import { AppBar } from "./AppBar";
+import { useAuth } from "../hooks/useAuth";
+import { AppBar } from "../Components/AppBar";
 
-export const HomeLayout = () => {
+export const FreeLayout = () => {
   const { user } = useAuth();
   const outlet = useOutlet();
-  if (user) {
-    return <Navigate to="/dashboard/profile" replace />;
-  }
+  
+  if (user) return <Navigate to="/dashboard/apod" replace />;
+  
   return (
-    <div>
+    <>
       <AppBar
         pages={[
           { label: "Home", path: "/" },
@@ -17,6 +17,6 @@ export const HomeLayout = () => {
         ]}
       />
       {outlet}
-    </div>
+    </>
   );
 };
